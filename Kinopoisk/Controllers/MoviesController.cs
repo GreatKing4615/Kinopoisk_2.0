@@ -148,5 +148,11 @@ namespace Kinopoisk.Controllers
                 return true;
             return false;
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            unitOfWork.Dispose();
+            base.Dispose(disposing);
+        }
     }
 }

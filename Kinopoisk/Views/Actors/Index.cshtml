@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Kinopoisk.Domain.Core.Actor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="input-group mb-3">
+    <form method="get" action="~/Actors/SearchTerm"></form>
+    <input type="text" name="term" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Button</button>
+    </div>
+</div>
+
+
+<form method="get" action="~/Actors/index">
+    <div class="container mb-3">
+        <h1 class="text-center">Коллекция актеров</h1>
+        <div class="row well">
+            <div class="col-lg-4 col-md-4">
+                <div class="form-group">
+                    <label for="selector" class="control-label">
+                        <i class="fa fa-sort"></i> Сортировка
+                    </label>
+                    <select  id="selectpicer" class="form-control" name="options">
+                        <option value="0">По алфавиту(А-я)</option>
+                        <option value="1">По алфавиту(Я-а)</option>
+                        <option value="2">Сначала новые</option>
+                        <option value="3">Сначала старые</option>
+                        <option value="4">Высокий рейтинг</option>
+                        <option value="5">Низкий рейтинг</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="form-group">
+                    <label for="selectpicer" class="control-label" style="color:transparent;">
+                        <i class="fa fa-search"></i> Найти
+                    </label>
+                    <input  class="btn btn-primary btn-block btn-raised" type="submit" value="Найти">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4" id="grid">
+                <div class="grid-item" id="item">
+                    <div class="card shadow p-2 mb-5 bg-white rounded">
+                        <div class="card-header">
+
+                        </div>
+                        <img src="@item.PhotoPath" class="card-img-top img-fluid img-thumbnail" alt="...">
+                        <div class="card-body text-center">
+                            <div class="clearfix text-center">
+
+                                <p class=" text-center">
+                                    <span class="p2-8 ml-1 text-center">❤@item.Rating</span>
+                                </p>
+
+                            </div>
+
+
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text">
+                                @item.Birthday.ToShortDateString()
+                            </p>
+                            <a href="@Url.Action("Details","Actors",new {id=@item.Id })" class="btn btn-primary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+
+

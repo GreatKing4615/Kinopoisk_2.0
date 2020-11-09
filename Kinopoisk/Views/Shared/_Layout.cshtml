@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Kinopoisk</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar   navbar-expand-lg navbar-dark bg-dark mb-5">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav ">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-page="/Index">Кинопоиск 2.0 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Movies")" >Коллекция фильмов <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Actors")">Коллекция актеров<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Профиль</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown08">
+
+                            @if (@User.Identity.IsAuthenticated)
+                            {
+                                <a class="dropdown-item" href="#" id="username">@User.Identity.Name</a>
+                                <a class="dropdown-item" href="@Url.Action("Logout","Account")" id="inputLink">Выйти </a>
+                            }
+                            else
+                            {
+                                <a class="dropdown-item disabled"  href="#" id="username">Не авторизованы</a>
+                                <a class="dropdown-item" href="@Url.Action("Login","Account")" id="inputLink">Войти </a>
+                                <a class="dropdown-item" href="@Url.Action("Register","Account")">Зарегистрироваться</a>
+                            }
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - Шаховал Виталий Романович - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+
+
+
+    @RenderSection("Scripts", required: false)
+
+
+
+</body>
+</html>

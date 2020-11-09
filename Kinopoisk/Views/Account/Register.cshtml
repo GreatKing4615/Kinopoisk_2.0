@@ -1,0 +1,36 @@
+﻿@model Kinopoisk.Models.RegisterModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="input-card">
+            <h1 class="text-center">Регистрация</h1>
+
+            <div class="card-body">
+                <form asp-action="Register" asp-controller="Account" asp-anti-forgery="true" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Введите Логин</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1"
+                               aria-describedby="emailHelp" asp-for="Login">
+                        <small id="emailHelp" class="form-text text-muted">Логин может быть любым.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Пароль</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" asp-for="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Повторите пароль</label>
+                        <input asp-for="ConfirmPassword" type="password" class="form-control" id="RepeatPassword1" />
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Зарегистрироваться">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

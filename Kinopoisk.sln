@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinopoisk", "Kinopoisk\Kinopoisk.csproj", "{80757FBB-8A50-4A03-ADB6-0156C833271D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5965835B-D1E0-46DA-A2D4-AB7E9F59EFA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinopoisk.Domain.Core", "Kinopoisk.Domain.Core\Kinopoisk.Domain.Core.csproj", "{AFDBB01A-2F2A-491B-8BBD-D76FD407B6C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinopoisk.Domain.Interfaces", "Kinopoisk.Domain.Interfaces\Kinopoisk.Domain.Interfaces.csproj", "{56B47B97-5019-4F13-8490-B77A70642062}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5FC2C09D-0B64-4F78-BDD5-DC97E062C009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinopoisk.Infrastructure.Data", "Kinopoisk.Infrastructure.Data\Kinopoisk.Infrastructure.Data.csproj", "{23077F97-FCC2-4562-9665-F142A43A620A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80757FBB-8A50-4A03-ADB6-0156C833271D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80757FBB-8A50-4A03-ADB6-0156C833271D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80757FBB-8A50-4A03-ADB6-0156C833271D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80757FBB-8A50-4A03-ADB6-0156C833271D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFDBB01A-2F2A-491B-8BBD-D76FD407B6C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFDBB01A-2F2A-491B-8BBD-D76FD407B6C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFDBB01A-2F2A-491B-8BBD-D76FD407B6C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFDBB01A-2F2A-491B-8BBD-D76FD407B6C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B47B97-5019-4F13-8490-B77A70642062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B47B97-5019-4F13-8490-B77A70642062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B47B97-5019-4F13-8490-B77A70642062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B47B97-5019-4F13-8490-B77A70642062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23077F97-FCC2-4562-9665-F142A43A620A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23077F97-FCC2-4562-9665-F142A43A620A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23077F97-FCC2-4562-9665-F142A43A620A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23077F97-FCC2-4562-9665-F142A43A620A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AFDBB01A-2F2A-491B-8BBD-D76FD407B6C9} = {5965835B-D1E0-46DA-A2D4-AB7E9F59EFA5}
+		{56B47B97-5019-4F13-8490-B77A70642062} = {5965835B-D1E0-46DA-A2D4-AB7E9F59EFA5}
+		{23077F97-FCC2-4562-9665-F142A43A620A} = {5FC2C09D-0B64-4F78-BDD5-DC97E062C009}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F693A24-EB54-435C-8E89-18150AA31C0E}
+	EndGlobalSection
+EndGlobal

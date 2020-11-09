@@ -20,12 +20,16 @@ namespace Kinopoisk.Controllers
             unitOfWork = new UnitOfWork(dbContext);
         }
 
+
         // GET: Actors
         [HttpGet]
-        [Authorize]
-        public IActionResult Index(int options =9)
+
+        public IActionResult Index(int options = 0 )
         {
-            return View(unitOfWork.SQLActor.GetActorOrdered(options));
+           
+                return View(unitOfWork.SQLActor.GetActorOrdered(options));
+            
+            
         }
 
         
@@ -142,9 +146,9 @@ namespace Kinopoisk.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Actor> SearchTerm(string term)
+        public IActionResult SearchTerm(string term)
         {
-            return unitOfWork.SQLActor.Search(x => x.Name.ToLower().Contains(term.ToLower()));
+            return RedirectToAction("Index1", unitOfWork.SQLActor.Search(x => x.Name.ToLower().Contains(term.ToLower())));
         }
 
         private bool ActorExists(int id)

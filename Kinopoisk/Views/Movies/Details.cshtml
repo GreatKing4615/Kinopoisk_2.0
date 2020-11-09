@@ -39,10 +39,9 @@
                                     <div class="row">
 
                                         <div class="col-4 m-3">
-                                            <form method="post" class="mt-3" enctype="multipart/form-data">
+                                            <form method="post" action="~/Movies/Like" class="mt-3" enctype="multipart/form-data">
                                                 <input type="hidden" name="Id" value="@Model.Id" asp-page="Movies/Edit" />
-                                                <button type="submit" class="list-group-item  btn " asp-route-Id="@Model.Id"
-                                                        role="tab" aria-controls="profile">
+                                                <button type="submit" class="list-group-item  btn" role="tab" aria-controls="profile">
                                                     👍🏻
                                                 </button>
 
@@ -51,7 +50,7 @@
                                             </form>
                                         </div>
                                         <div class="col-2 m-3">
-                                            <form method="post" class="mt-3" enctype="multipart/form-data">
+                                            <form method="post" class="mt-3" action="~/Movies/Dislike" enctype="multipart/form-data">
                                                 <input type="hidden" name="Id" value="@Model.Id" asp-page="Movies/Edit" />
                                                 <button type="submit" class="list-group-item  btn" role="tab" aria-controls="profile">
                                                     👎🏻
@@ -114,7 +113,7 @@
                                                             <div class="card-img mt-2">
                                                                 <p>@actor.Actor.Name</p>
                                                             </div>
-                                                            <a href="@Url.Action("Details","Actors",new {id=actor.MovieId })"  class="btn btn-primary">Подробнее</a>
+                                                            <a href="@Url.Action("Details","Actors",new {id=@actor.ActorId })"  class="btn btn-primary">Подробнее</a>
                                                         </div>
 
 

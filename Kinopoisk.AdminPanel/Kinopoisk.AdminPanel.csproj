@@ -6,4 +6,13 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Ninject" Version="3.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kinopoisk.Domain.Core\Kinopoisk.Domain.Core.csproj" />
+    <ProjectReference Include="..\Kinopoisk.Infrastructure.Data\Kinopoisk.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
 </Project>

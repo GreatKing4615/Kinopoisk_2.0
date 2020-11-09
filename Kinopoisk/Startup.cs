@@ -33,7 +33,7 @@ namespace Kinopoisk
 
 
 
-            services.AddDbContextPool<KinopoiskDbContext>(options =>
+            services.AddDbContext<KinopoiskDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("KinopoiskString"));
             });
